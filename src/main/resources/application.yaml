@@ -1,0 +1,29 @@
+camunda.bpm:
+  admin-user:
+    id: admin
+    password: admin
+  database:
+    schema-update: true
+    type: postgres
+  application:
+    deploy-changed-only: true
+#  history-level:
+
+spring.datasource:
+  driver-class-name: org.postgresql.Driver
+  url: jdbc:postgresql://${PG_HOST:localhost}:${PG_PORT:5432}/${PG_DB_NAME:internship_db}
+  username: ${PG_USERNAME:test}
+  password: ${PG_PASSWORD:test-user}
+server:
+  port: ${PORT:8081}
+spring:
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+#    properties.hibernate.show_sql: true
+#    properties.hibernate.use_sql_comments: true
+#    properties.hibernate.format_sql: true
+process:
+  app:
+    botUrl: http://localhost:8080/api/v1/reminder/send
+
