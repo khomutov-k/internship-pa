@@ -7,20 +7,20 @@ import ru.innopolis.process_automation.dto.ReminderDto;
 
 @Service
 public class BotRequestService {
-    @Value("process.app.botUrl")
-    String botUrl;
-    RestTemplate template;
+  @Value("process.app.botUrl")
+  String botUrl;
+  RestTemplate template;
 
-    public BotRequestService(RestTemplate template) {
-        this.template = template;
-    }
+  public BotRequestService(RestTemplate template) {
+    this.template = template;
+  }
 
-    public void sendMessageByChatId(String message, Long chatId) {
-        ReminderDto dto = ReminderDto.builder()
-                .message(message)
-                .chatId(chatId)
-                .build();
+  public void sendMessageByChatId(String message, Long chatId) {
+    ReminderDto dto = ReminderDto.builder()
+        .message(message)
+        .chatId(chatId)
+        .build();
 
-        template.postForEntity(botUrl, dto, null);
-    }
+    template.postForEntity(botUrl, dto, Void.class);
+  }
 }

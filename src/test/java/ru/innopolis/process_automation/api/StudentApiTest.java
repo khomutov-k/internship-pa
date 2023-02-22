@@ -12,23 +12,23 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class StudentApiTest {
-    public static final String TEST_CARD_ID = "test-card-id";
-    @Autowired
-    private TestRestTemplate template;
-    @Autowired
-    private StudentRepository repository;
+  public static final String TEST_CARD_ID = "test-card-id";
+  @Autowired
+  private TestRestTemplate template;
+  @Autowired
+  private StudentRepository repository;
 
-    @Test
-    void smoke_subscribeToService_canSubscribeSuccessfully() {
-        StudentDto dto = StudentDto.builder()
-                .studentCardId(TEST_CARD_ID)
-                .chatId(123123L)
-                .build();
+  @Test
+  void smoke_subscribeToService_canSubscribeSuccessfully() {
+    StudentDto dto = StudentDto.builder()
+        .studentCardId(TEST_CARD_ID)
+        .chatId(123123L)
+        .build();
 
-        HttpStatus statusCode = template.postForEntity("/api/v1/student/subscribe", dto, null).getStatusCode();
-        assertThat(statusCode).isEqualTo(HttpStatus.OK);
+    HttpStatus statusCode = template.postForEntity("/api/v1/student/subscribe", dto, null).getStatusCode();
+    assertThat(statusCode).isEqualTo(HttpStatus.OK);
 
-        repository.findByStudentCardId(TEST_CARD_ID)
-                .orElseThrow(()-> new AssertionError("No student found by student card"));
-    }
+    repository.findByStudentCardId(TEST_CARD_ID)
+        .orElseThrow(() -> new AssertionError("No student found by student card"));
+  }
 }

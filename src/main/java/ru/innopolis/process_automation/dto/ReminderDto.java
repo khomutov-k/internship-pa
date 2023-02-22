@@ -8,6 +8,6 @@ import lombok.*;
 @Getter
 @Setter
 public class ReminderDto {
-    String message;
-    Long chatId;
+  String message;
+  Long chatId;
 }

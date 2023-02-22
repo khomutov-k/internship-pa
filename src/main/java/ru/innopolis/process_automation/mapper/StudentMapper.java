@@ -7,8 +7,8 @@ import ru.innopolis.process_automation.entity.Student;
 
 @Mapper(componentModel = "spring")
 public interface StudentMapper {
-    @Mapping(target = "id", ignore = true)
-    Student fromStudentDto(StudentDto dto);
+  @Mapping(target = "id", ignore = true)
+  Student fromStudentDto(StudentDto dto);
 
-    StudentDto toStudentDto(Student entity);
+  StudentDto toStudentDto(Student entity);
 }

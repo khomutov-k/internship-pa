@@ -8,9 +8,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface StudentRepository extends JpaRepository<Student, UUID> {
-    Optional<Student> findByStudentCardId(String studentCardId);
+  Optional<Student> findByStudentCardId(String studentCardId);
 
-    Optional<Student> findByChatId(Long chatId);
+  Optional<Student> findByChatId(Long chatId);
 
-    List<Student> findAllByChatId(Long chatId);
+  List<Student> findAllByChatId(Long chatId);
 }

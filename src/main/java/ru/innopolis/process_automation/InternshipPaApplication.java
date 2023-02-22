@@ -9,14 +9,14 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class InternshipPaApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(InternshipPaApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(InternshipPaApplication.class, args);
+  }
 
-	@Bean
-	public RestTemplate getRestTemplate() {
-		RestTemplateBuilder builder = new RestTemplateBuilder();
-		return builder.build();
-	}
+  @Bean
+  public RestTemplate getRestTemplate() {
+    RestTemplateBuilder builder = new RestTemplateBuilder();
+    return builder.build();
+  }
 
 }

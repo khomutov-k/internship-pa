@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 @Component("DelegateSendListToCompany")
 public class DelegateSendListToCompany implements JavaDelegate {
 
-    @Override
-    public void execute(DelegateExecution execution) throws Exception {
+  @Override
+  public void execute(DelegateExecution execution) {
 
-    }
+  }
 }
