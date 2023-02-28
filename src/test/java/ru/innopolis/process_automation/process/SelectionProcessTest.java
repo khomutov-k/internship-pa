@@ -7,7 +7,6 @@ import org.camunda.bpm.engine.test.ProcessEngineRule;
 import org.camunda.bpm.engine.test.mock.Mocks;
 import org.camunda.community.process_test_coverage.junit4.platform7.rules.TestCoverageProcessEngineRuleBuilder;
 import org.junit.*;
-import org.mockito.MockitoAnnotations;
 
 import static org.camunda.bpm.engine.test.assertions.bpmn.BpmnAwareTests.*;
 
@@ -27,7 +26,6 @@ public class SelectionProcessTest {
   public void setUp() {
     JavaDelegate delegate = context -> {
     };
-    MockitoAnnotations.openMocks(this);
     Mocks.register("DelegateSendReminder", delegate);
     Mocks.register("DelegateUpdateStatus", delegate);
   }
