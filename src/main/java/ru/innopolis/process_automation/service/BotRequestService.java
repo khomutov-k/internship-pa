@@ -7,7 +7,7 @@ import ru.innopolis.process_automation.dto.ReminderDto;
 
 @Service
 public class BotRequestService {
-  @Value("process.app.botUrl")
+  @Value("${process.app.botUrl}")
   String botUrl;
   RestTemplate template;
 
